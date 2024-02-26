@@ -1,5 +1,5 @@
 """
-Module file with functions for squaring numbers, multiplying numbers by 2, and summing 2 numbers
+Module file with functions for squaring numbers, multiplying numbers by 2, and summing 2 inputs
 """
 
 def square(num):
@@ -16,6 +16,6 @@ def double(num):
 
 def add(x, y):
     """
-    Takes 2 numbers, and returns their sum
+    Takes 2 inputs, and returns their sum
     """
     return x + y
