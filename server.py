@@ -186,3 +186,21 @@ def add_by_uuid():
         return {"message" : "Error- Data not defined!"}, 500
 
     return {"message" : f"{add_person['id']}"}, 200
+
+@app.errorhandler(404)
+def api_not_found(error):
+    """
+    Error handler for 404 errors, return error message
+    Returns:
+    404: always, error message for API not found
+    """
+    return {"message" : "Error- API not found!"}, 404
+
+@app.errorhandler(500)
+def internal_server_error(error):
+    """
+    Error handler for 500 errors, return error message
+    Returns:
+    500: always, error message for internal server error
+    """
+    return {"message" : "Error- Internval server error!"}, 500
