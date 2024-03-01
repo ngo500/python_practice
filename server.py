@@ -167,3 +167,22 @@ def delete_by_uuid(id):
             return {"message" : str(id)}, 200
     return {"message" : "Error- Person not found!"}, 404
   
+@app.route('/person', methods=['POST'])
+def add_by_uuid():
+    """
+    POST person based on ID, return message stating if added
+    returns:
+    200: person successfully added
+    422: error, invalid input parameter
+    """
+    add_person = request.json
+
+    if not add_person:
+        return {"message" : "Error- Invalid input parameter!"}, 422
+
+    try:
+        data.append(add_person)
+    except NameError:
+        return {"message" : "Error- Data not defined!"}, 500
+
+    return {"message" : f"{add_person['id']}"}, 200
